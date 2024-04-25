@@ -96,6 +96,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "restaurant-management-system:build:production",
+              "serveTarget": "restaurant-management-system:serve:production"
+            },
+            "development": {
+              "buildTarget": "restaurant-management-system:build:development",
+              "serveTarget": "restaurant-management-system:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

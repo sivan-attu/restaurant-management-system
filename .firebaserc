@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "restaurant-management-sy-e5807": {
+      "hosting": {
+        "restaurant-management-system": [
+          "restaurant-management-system"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "restaurant-management-sy-e5807"
+  }
+}
