@@ -1,0 +1,42 @@
+<mat-toolbar color="primary">
+  <span>{{ restaurantName }}</span>
+  @if(!breakPoint.isMobile()){
+  <nav>
+    @for (item of navLists; track $index) {
+    <a
+      routerLink="/{{ item.routePath }}"
+      routerLinkActive="router-link-active"
+      matBadge="0"
+      [matBadgeHidden]="item.itemName != 'Cart'"
+      matBadgeColor="warn"
+      matBadgeSize="small"
+    >
+      {{ item.itemName }}
+    </a>
+
+    }
+  </nav>
+  }@else{
+  <span>
+    <button mat-icon-button>
+      <mat-icon matBadge="0" matBadgeColor="warn" matBadgeSize="small">
+        shopping_cart
+      </mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      @for(item of navLists;track $index){ @if(item.itemName != 'Cart'){
+      <button mat-menu-item>
+        <span>{{ item.itemName }}</span>
+      </button>
+      } }
+    </mat-menu>
+  </span>
+  }
+</mat-toolbar>

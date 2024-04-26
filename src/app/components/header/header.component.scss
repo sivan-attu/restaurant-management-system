@@ -1,0 +1,18 @@
+:host {
+  mat-toolbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    a {
+      margin-right: 10px;
+      text-decoration: none;
+      color: white;
+      font-size: medium;
+      padding: 2px;
+    }
+    .router-link-active {
+      border-bottom: 1px solid white;
+    }
+  }
+}
